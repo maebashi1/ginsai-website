@@ -408,6 +408,8 @@ footer {
     gap: 1.2em;
     padding: 0 1em;
     scrollbar-width: none;
+    scroll-padding-left: 1em;
+    scroll-padding-right: 1em;
   }
 
   .section-nav ul::-webkit-scrollbar {
@@ -415,6 +417,10 @@ footer {
   }
 
   .section-nav li {
+    scroll-snap-align: start;
+  }
+
+  .section-nav li:first-child {
     scroll-snap-align: start;
   }
 
