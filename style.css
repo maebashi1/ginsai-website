@@ -394,3 +394,33 @@ footer {
     margin: 0 auto;
   }
 }
+@media screen and (max-width: 768px) {
+  .section-nav {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .section-nav ul {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1.2em;
+    padding: 0 1em;
+    scrollbar-width: none;
+  }
+
+  .section-nav ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  .section-nav li {
+    scroll-snap-align: start;
+  }
+
+  .section-nav li a {
+    white-space: nowrap;
+    padding: 0.5em 1em;
+    font-size: 1em;
+  }
+}
