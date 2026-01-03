@@ -251,26 +251,45 @@ footer {
 .section-nav li a:hover {
   color: #fff;
 }
-.logo-title {
+.hero {
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 1em;
+  align-items: center;
+  position: relative;
 }
 
-.logo-en {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 1.2em;
-  color: #fff;
+/* オーバーレイは残してOK */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
-.logo-jp {
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  font-family: 'Yuji Mai', serif;
-  font-size: 3.5em;
-  color: #fff;
-  letter-spacing: 0.15em;
+/* ロゴ画像を前面に */
+.logo-img {
+  max-width: 80%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  border: none;
+  box-shadow: none;
+}
+.logo-img {
+  width: 300px;       /* 横幅を固定（例：400px） */
+  max-width: 80%;     /* 画面が狭いときは自動で縮む */
+  height: auto;       /* 縦横比を保つ */
+  position: relative;
+  z-index: 2;
+  border: none;
+  box-shadow: none;
 }
 @media screen and (max-width: 768px) {
   .section-nav ul {
@@ -308,5 +327,70 @@ footer {
     font-size: 1em;
     padding: 0.3em 0;
     display: inline-block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .logo-img {
+    width: 220px;   /* スマホでは小さめに */
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 70vh;   /* 少し低めにしてバランスを取る */
+    padding: 1em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .section-nav ul {
+    gap: 1.2em;
+    padding: 0 0.5em;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  section h2 {
+    font-size: 1.3em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .menu-item {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 768px) {
+
+  .hero {
+    height: 70vh;
+    padding: 1em;
+  }
+
+  .logo-img {
+    width: 220px;
+    max-width: 80%;
+  }
+
+  .section-nav ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1.2em;
+    padding: 0 0.5em;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  section h2 {
+    font-size: 1.3em;
+  }
+
+  .menu-item {
+    width: 90%;
+    margin: 0 auto;
   }
 }
