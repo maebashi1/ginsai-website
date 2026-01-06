@@ -283,7 +283,7 @@ footer {
   box-shadow: none;
 }
 .logo-img {
-  width: 300px;       /* 横幅を固定（例：400px） */
+  width: 250px;       /* 横幅を固定（例：400px） */
   max-width: 80%;     /* 画面が狭いときは自動で縮む */
   height: auto;       /* 縦横比を保つ */
   position: relative;
@@ -370,7 +370,7 @@ footer {
   }
 
   .logo-img {
-    width: 220px;
+    width: 160px;
     max-width: 60%;
   }
 
