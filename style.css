@@ -438,3 +438,6 @@ footer {
     display: block;   /* 余計な隙間を防ぐ */
   }
 }
+.space-item img {
+  border-radius: 20px; /* ← ここで角丸の大きさを調整 */
+}
