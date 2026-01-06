@@ -289,3 +289,16 @@ footer {
 .space-item img {
   border-radius: 20px; /* ← ここで角丸の大きさを調整 */
 }
+@media screen and (max-width: 768px) {
+  .space-gallery {
+    display: flex;
+    flex-direction: column; /* 縦並び */
+    gap: 1.5em;
+  }
+
+  .space-item img {
+    width: 100%;   /* 横幅を揃える */
+    height: auto;
+    border-radius: 20px; /* 既存の角丸を維持 */
+  }
+}
