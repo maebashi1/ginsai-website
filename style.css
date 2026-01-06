@@ -121,10 +121,6 @@ footer {
   footer {
     font-size: 0.8em;
   }
-    .logo-img {
-    width: 150px;
-    max-width: 80%;
-  }
 }
 .map-container {
   position: relative;
@@ -256,6 +252,11 @@ footer {
   border: none;
   box-shadow: none;
 }
+    .logo-img {
+    width: 150px;
+    max-width: 80%;
+  }
+
 @media screen and (max-width: 768px) {
   .section-nav ul {
     flex-direction: row;
