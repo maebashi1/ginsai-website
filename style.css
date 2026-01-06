@@ -331,7 +331,7 @@ footer {
 }
 @media screen and (max-width: 768px) {
   .logo-img {
-    width: 220px;   /* スマホでは小さめに */
+    width: 180px;   /* スマホでは小さめに */
     max-width: 80%;
   }
 }
