@@ -304,47 +304,9 @@ footer {
   }
 }
 @media screen and (max-width: 768px) {
-  .section-nav {
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  .section-nav ul {
-    display: flex;
-    flex-wrap: nowrap;      /* 折り返さない */
-    overflow-x: auto;       /* 横スクロール */
-    gap: 1.2em;
-    padding: 0 1em;
-    scrollbar-width: none;  /* Firefox */
-  }
-
-  .section-nav ul::-webkit-scrollbar {
-    display: none;          /* Chrome/Safari */
-  }
-
-  .section-nav li a {
-    white-space: nowrap;    /* 文字の折り返し防止 */
-    font-size: 1em;
-    padding: 0.3em 0;
-    display: inline-block;
-  }
-}
-@media screen and (max-width: 768px) {
-  .logo-img {
-    width: 180px;   /* スマホでは小さめに */
-    max-width: 80%;
-  }
-}
-@media screen and (max-width: 768px) {
   .hero {
     height: 70vh;   /* 少し低めにしてバランスを取る */
     padding: 1em;
-  }
-}
-@media screen and (max-width: 768px) {
-  .section-nav ul {
-    gap: 1.2em;
-    padding: 0 0.5em;
   }
 }
 @media screen and (max-width: 768px) {
@@ -373,71 +335,7 @@ footer {
     width: 160px;
     max-width: 60%;
   }
-
-  .section-nav ul {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 1.2em;
-    padding: 0 0.5em;
-  }
-
-  body {
-    font-size: 15px;
-  }
-
-  section h2 {
-    font-size: 1.3em;
-  }
-
-  .menu-item {
-    width: 90%;
-    margin: 0 auto;
-  }
-}
-@media screen and (max-width: 768px) {
-  .section-nav {
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  .section-nav ul {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 1.2em;
-    padding: 0 1em;
-    scrollbar-width: none;
-    scroll-padding-left: 1em;
-    scroll-padding-right: 1em;
-  }
-
-  .section-nav ul::-webkit-scrollbar {
-    display: none;
-  }
-
-  .section-nav li {
-    scroll-snap-align: start;
-  }
-
-  .section-nav li:first-child {
-    scroll-snap-align: start;
-  }
-
-  .section-nav li a {
-    white-space: nowrap;
-    padding: 0.5em 1em;
-    font-size: 1em;
-  }
-}
-@media screen and (max-width: 768px) {
-  .space-item img {
-    width: 100%;      /* 横幅いっぱいに収める */
-    height: auto;     /* 縦横比を維持 */
-    max-width: 100%;  /* はみ出し防止 */
-    display: block;   /* 余計な隙間を防ぐ */
-  }
-}
+ }
 .space-item img {
   border-radius: 20px; /* ← ここで角丸の大きさを調整 */
 }
