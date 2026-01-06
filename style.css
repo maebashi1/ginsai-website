@@ -119,7 +119,7 @@ footer {
     font-size: 0.8em;
   }
     .logo-img {
-    width: 80px;
+    width: 120px;
     max-width: 60%;
   }
 }
@@ -255,14 +255,18 @@ footer {
 }
 @media screen and (max-width: 768px) {
   .section-nav ul {
-    flex-direction: row; /* 横並びにする */
-    flex-wrap: nowrap;   /* 折り返さない */
-    overflow-x: auto;    /* 横スクロール可能にする（必要なら） */
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     gap: 1em;
+    padding: 0 1em;
+    scrollbar-width: thin;
   }
 
   .section-nav li a {
-    white-space: nowrap; /* 文字が折り返されないように */
+    white-space: nowrap;
+    min-width: 80px;
+    text-align: center;
   }
 }
 @media screen and (max-width: 768px) {
