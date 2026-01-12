@@ -145,6 +145,12 @@ section h2 {
   flex-wrap: wrap;
   margin-top: 2em;
 }
+.space-gallery {
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 
 .menu-item {
   width: 300px;
@@ -194,6 +200,11 @@ section h2 {
   object-fit: cover;
   border-radius: 20px;
 }
+.menu-item img {
+  max-width: 100%;
+  display: block;
+}
+
 
 /* ================================
    ボタン
@@ -325,4 +336,18 @@ footer {
     min-width: 80px;
     text-align: center;
   }
+}
+/* 横スクロール完全防止 */
+html, body {
+  overflow-x: hidden;
+}
+
+/* ナビの横スクロールが全体に影響しないように */
+.section-nav ul {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.section-nav {
+  width: 100%;
+  box-sizing: border-box;
 }
