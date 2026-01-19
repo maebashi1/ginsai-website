@@ -327,7 +327,8 @@ footer {
     flex-wrap: nowrap;
     overflow-x: auto;
     gap: 1em;
-    padding: 0 1.5em;
+padding-left: 1.5em; /* ← 左端に余白を追加！ */
+  padding-right: 1em;
     scrollbar-width: thin;
     height: 48px;          /* ← 高さを固定（重要） */
   align-items: center;   /* ← 上下の揺れ防止 */
