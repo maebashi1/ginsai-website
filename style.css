@@ -3,16 +3,21 @@
 ================================ */
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500&display=swap');
 
-body {
-  font-family: 'Shippori Mincho', serif;
-  background-color: #111;
-  color: #f5f5f5;
+html, body {
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
 
+body {
+  font-family: 'Shippori Mincho', serif;
+  background-color: #111;
+  color: #f5f5f5;
+  line-height: 1.6;
+}
+
 /* ================================
-   ヒーロー（トップ画像）
+   ヒーロー & ロゴ
 ================================ */
 .hero {
   height: 70vh;
@@ -22,109 +27,68 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   position: relative;
 }
 
-/* 黒の半透明オーバーレイ */
 .hero::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   background: rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
 
-.hero-text {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-text h2 {
-  font-size: 5em;
-  color: #bfa46f;
-  margin-bottom: 0.5em;
-}
-
-.hero-text p {
-  font-size: 1.2em;
-}
-
-/* ================================
-   ロゴ
-================================ */
 .logo-img {
-  max-width: 20%;
+  max-width: 200px;
+  width: 20%;
   height: auto;
   position: relative;
   z-index: 2;
-  border: none;
-  box-shadow: none;
 }
 
 /* ================================
    ナビゲーション
 ================================ */
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2em;
-  padding: 1em 0;
-  margin: 0;
-}
-
-nav a {
-  color: #f5f5f5;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #d4af37;
-}
-
-/* セクションナビ（固定） */
 .section-nav {
   background-color: #111;
-  padding: 1em 0;
-  text-align: center;
   border-bottom: 1px solid #333;
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
 }
 
 .section-nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 2em;
   margin: 0;
-  padding: 0;
+  padding: 1em;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
-.section-nav li a {
+.section-nav a {
   color: #bfa46f;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1em;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
-.section-nav li a:hover {
+.section-nav a:hover {
   color: #fff;
 }
 
 /* ================================
-   セクション
+   セクション共通
 ================================ */
 section {
-  padding: 3em 2em;
+  padding: 4em 2em;
+  max-width: 1000px;
+  margin: 0 auto;
   border-bottom: 1px solid #333;
 }
 
@@ -132,244 +96,107 @@ section h2 {
   color: #bfa46f;
   border-left: 5px solid #bfa46f;
   padding-left: 0.5em;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
+  letter-spacing: 0.1em;
 }
 
 /* ================================
-   メニューギャラリー
+   ギャラリー・アイテム
 ================================ */
 .menu-gallery {
   display: flex;
   gap: 2em;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 2em;
 }
-.space-gallery {
-  box-sizing: border-box;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
 
 .menu-item {
   width: 300px;
-  text-align: center;
   background-color: #1a1a1a;
   padding: 1em;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
   transition: transform 0.3s ease;
 }
 
-.menu-item:hover {
-  transform: scale(1.03);
-}
+.menu-item:hover { transform: scale(1.03); }
 
 .menu-item img {
   width: 100%;
-  height: auto;
   border-radius: 6px;
-  border: 2px solid #bfa46f;
+  border: 1px solid #bfa46f;
 }
 
-.menu-item p {
-  margin-top: 0.8em;
-  font-size: 1.1em;
-  color: #f5f5f5;
-}
-
-/* ================================
-   空間ギャラリー
-================================ */
 .space-gallery {
   display: flex;
   flex-direction: column;
-  gap: 2em;
-  justify-content: center;
-  align-items: flex-start;
+  gap: 3em;
 }
+
 .space-item {
-  width: 30%;
-  min-width: 280px;
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .space-item img {
   width: 100%;
-  height: 220px;
+  max-width: 400px;
+  height: 250px;
   object-fit: cover;
-  border-radius: 20px;
-}
-.menu-item img {
-  max-width: 100%;
-  display: block;
+  border-radius: 15px;
 }
 
+.space-text { flex: 1; min-width: 280px; }
 
 /* ================================
-   ボタン
+   Googleマップ レスポンシブ
 ================================ */
-.reserve-button {
-  display: inline-block;
-  background-color: #bfa46f;
-  color: #111;
-  padding: 0.8em 1.5em;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.reserve-button:hover {
-  background-color: #d4af37;
-}
-
-.instagram-button {
-  display: inline-block;
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  color: #fff;
-  padding: 0.8em 1.5em;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: opacity 0.3s ease;
-}
-
-.instagram-button:hover {
-  opacity: 0.85;
-}
-
-/* ================================
-   営業時間
-================================ */
-.hours p {
-  text-align: left;
-  margin: 0.3em 0;
-}
-
-.hours .indent {
-  padding-left: 8.5em;
-}
-
-/* ================================
-   フッター
-================================ */
-footer {
-  background-color: #000;
-  text-align: center;
-  padding: 1.5em;
-  color: #888;
-  font-size: 0.9em;
-}
-
-/* ================================
-   スマホ（768px以下）
-================================ */
-@media screen and (max-width: 768px) {
-
-  body {
-    font-size: 15px;
-  }
-
-  .hero {
-    height: 70vh;
-    padding: 1em;
-  }
-
-  .logo-img {
-    width: 150px;
-    max-width: 80%;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 1em;
-  }
-
-  .hero-text h2 {
-    font-size: 1.5em;
-  }
-
-  .hero-text p {
-    font-size: 1em;
-  }
-
-  section {
-    padding: 2em 1em;
-  }
-
-  footer {
-    font-size: 0.8em;
-  }
-
-  .menu-item {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .space-gallery {
-    flex-direction: column;
-    gap: 1.5em;
-  }
-.space-item {
-    width: 100%;
-  }
-
-  .space-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-
-  }
-
-  .section-nav ul {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 1em;
-padding-left: 1.5em; /* ← 左端に余白を追加！ */
-  padding-right: 1em;
-    scrollbar-width: thin;
-    height: 48px;          /* ← 高さを固定（重要） */
-  align-items: center;   /* ← 上下の揺れ防止 */
-
-  }
-
-  .section-nav li a {
-    white-space: nowrap;
-    min-width: 100px;
-    text-align: center;
-    padding: 0.3em 0.5em;
-  }
-}
-/* 横スクロール完全防止 */
-html, body {
-  overflow-x: hidden;
-}
-
-/* ナビの横スクロールが全体に影響しないように */
-.section-nav ul {
-  max-width: 100%;
-  overflow-x: auto;
-}
-.section-nav {
-  width: 100%;
-  box-sizing: border-box;
-}
-/* Googleマップをレスポンシブ対応にする */
 .map-container {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9比率 */
+  padding-bottom: 56.25%;
   height: 0;
-  overflow: hidden;
+  margin-top: 1.5em;
 }
 
 .map-container iframe {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   border: 0;
+}
+
+/* ================================
+   ボタン
+================================ */
+.reserve-button, .instagram-button {
+  display: inline-block;
+  padding: 0.8em 2em;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+.reserve-button { background-color: #bfa46f; color: #111; }
+.instagram-button { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
+
+/* ================================
+   スマホ対応
+================================ */
+@media screen and (max-width: 768px) {
+  .logo-img { width: 150px; }
+  .section-nav ul { justify-content: flex-start; padding-left: 1.5em; }
+  section { padding: 3em 1em; }
+  .space-item { flex-direction: column; text-align: center; }
+  .space-item img { max-width: 100%; }
+}
+
+footer {
+  text-align: center;
+  padding: 2em;
+  color: #666;
+  font-size: 0.8em;
 }
