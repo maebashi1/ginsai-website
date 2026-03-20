@@ -200,3 +200,8 @@ footer {
   color: #666;
   font-size: 0.8em;
 }
+footer p {
+  letter-spacing: 0.05em; 
+  color: #888;           
+  font-size: 0.85em;    
+}
