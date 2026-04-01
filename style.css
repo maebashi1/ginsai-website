@@ -205,3 +205,18 @@ footer p {
   color: #888;           
   font-size: 0.85em;    
 }
+/* Instagramフィードのコンテナ設定 */
+.instagram-feed-container {
+  max-width: 800px; /* 広がりすぎないように制限 */
+  margin: 1.5em auto; /* 中央寄せ */
+  background-color: #1a1a1a; /* 読み込み前の背景色 */
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* スマホでは横幅いっぱいに使う */
+@media screen and (max-width: 768px) {
+  .instagram-feed-container {
+    padding: 5px;
+  }
+}
