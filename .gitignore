@@ -1,0 +1,6 @@
+# 作業用バックアップ（公開しない）
+*.bak
+images/_original/
+
+# macOS
+.DS_Store
