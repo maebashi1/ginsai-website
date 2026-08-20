@@ -250,6 +250,7 @@ p { margin: 0 0 1.6em; }
   margin: 0 0 2.6em; padding-bottom: 1.5em;
   position: relative;
 }
+.section__title span { display: inline-block; }
 .section__title::after {
   content: ""; position: absolute; left: 50%; bottom: 0;
   transform: translateX(-50%);
@@ -641,6 +642,7 @@ p { margin: 0 0 1.6em; }
 
   .section { padding: 4.8em 1.3em; }
   .section__title { letter-spacing: .2em; margin-bottom: 2em; }
+  .section__title span { display: block; }
   .section__note { margin: -1.2em 0 2.4em; }
 
   .lead p:first-child { font-size: .98rem; }
