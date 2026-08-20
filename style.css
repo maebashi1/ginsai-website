@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* ============================================================
-   和モダンバル銀彩　スタイルシート
+   ワインバル銀彩　スタイルシート
    ============================================================ */
 
 :root {
@@ -11,6 +11,8 @@
   --gold:      #bfa46f;
   --gold-dim:  #8d7a4f;
   --gold-lite: #d8c396;
+  --wine-red:  #8e3b46;
+  --wine-white:#8b8556;
   --text:      #e8e6e2;
   --text-dim:  #a9a5a0;
   --serif:     'Shippori Mincho', 'Yu Mincho', 'YuMincho', 'Hiragino Mincho ProN', serif;
@@ -165,6 +167,17 @@ p { margin: 0 0 1.6em; }
   padding: 0 1.5em;
   animation: fadeUp 2s ease .3s both;
 }
+.hero__renewal {
+  font-family: var(--en); font-size: .74rem;
+  letter-spacing: .46em; text-transform: uppercase;
+  color: var(--gold-lite); margin: 0 0 1.8em;
+  text-shadow: 0 2px 14px rgba(0,0,0,.9);
+}
+.hero__renewal::after {
+  content: ""; display: block; width: 34px; height: 1px;
+  margin: .9em auto 0;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+}
 .hero__vertical {
   writing-mode: vertical-rl;
   margin: 0 auto;
@@ -196,8 +209,7 @@ p { margin: 0 0 1.6em; }
 .page-h1 span,
 .lead p:first-child span,
 .reserve__lead span,
-.sns__lead span,
-.lunch__lead span {
+.sns__lead span {
   display: inline-block;
 }
 
@@ -220,8 +232,9 @@ p { margin: 0 0 1.6em; }
 .section--sns     { background: var(--bg-2); }
 .section--taste   { background: var(--bg); }
 .section--menu    { background: var(--bg-2); }
-.section--drink   { background: var(--bg); }
-.section--lunch   { background: var(--bg-2); }
+.section--wine    { background: var(--bg); }
+.section--drink   { background: var(--bg-2); }
+.section--course  { background: var(--bg-3); }
 .section--space   { background: var(--bg); }
 .section--reserve { background: var(--bg-3); }
 .section--info    { background: var(--bg-2); }
@@ -341,6 +354,11 @@ p { margin: 0 0 1.6em; }
   font-family: var(--en); font-size: 1rem;
   letter-spacing: .05em; color: var(--gold-lite); white-space: nowrap;
 }
+.menu-list dd span {
+  display: block; font-family: var(--serif);
+  font-size: .7rem; letter-spacing: .04em;
+  color: var(--text-dim); margin-top: .1em;
+}
 .menu-caution {
   margin: 3em 0 0; font-size: .72rem; line-height: 1.95;
   color: var(--text-dim); border-top: 1px solid var(--line); padding-top: 1.4em;
@@ -351,31 +369,118 @@ p { margin: 0 0 1.6em; }
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 0 3.6em;
 }
-.menu-block--free { grid-column: 1 / -1; }
-.freedrink__price {
-  font-family: var(--en); font-size: 1.9rem;
-  color: var(--gold-lite); letter-spacing: .06em; margin: 0 0 1em;
-}
-.freedrink__price span { font-size: .74rem; letter-spacing: .1em; color: var(--text-dim); }
-.freedrink { margin: 0; }
-.freedrink > div {
-  display: flex; gap: 1.2em; padding: .7em 0;
-  border-bottom: 1px dotted rgba(255,255,255,.09);
-}
-.freedrink dt {
-  width: 8.5em; flex-shrink: 0;
-  font-size: .82rem; letter-spacing: .12em; color: var(--gold-dim);
-}
-.freedrink dd { margin: 0; font-size: .88rem; line-height: 1.9; }
 
 /* ============================================================
-   ランチ
+   ワインリスト
    ============================================================ */
-.lunch__lead {
-  max-width: 660px; margin: 0 auto 3.4em; text-align: center;
-  font-size: .95rem; line-height: 2.25;
+.wine-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0 4em;
+  position: relative;
 }
-.lunch__lead strong { color: var(--gold-lite); font-weight: 500; letter-spacing: .08em; }
+.wine-grid::before {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 50%;
+  width: 1px; background: linear-gradient(to bottom, transparent, var(--line) 12%, var(--line) 88%, transparent);
+}
+.wine-col__head {
+  text-align: center; margin: 0 0 1.8em; padding: .7em .4em;
+  border-top: 1px solid; border-bottom: 1px solid;
+}
+.wine-col--white .wine-col__head { border-color: rgba(139,133,86,.55); }
+.wine-col--red   .wine-col__head { border-color: rgba(142,59,70,.6); }
+.wine-col__ja {
+  display: block; font-size: 1.06rem; letter-spacing: .3em;
+}
+.wine-col--white .wine-col__ja { color: #c9c295; }
+.wine-col--red   .wine-col__ja { color: #d99aa3; }
+.wine-col__en {
+  display: block; font-family: var(--en);
+  font-size: .68rem; letter-spacing: .34em;
+  text-transform: uppercase; color: var(--text-dim); margin-top: .3em;
+}
+
+.wine-list { margin: 0; }
+.wine-list > div {
+  padding: 1.05em 0;
+  border-bottom: 1px dotted rgba(255,255,255,.11);
+  display: flex; align-items: baseline; gap: 1em; flex-wrap: wrap;
+}
+.wine-list > div:last-child { border-bottom: 0; }
+.wine-list dt {
+  flex: 1 1 auto; min-width: 0;
+  font-family: var(--en); font-size: 1.24rem;
+  letter-spacing: .1em; color: var(--text); line-height: 1.35;
+}
+.wine-list dt span {
+  display: block; font-family: var(--serif);
+  font-size: .72rem; letter-spacing: .1em;
+  color: var(--text-dim); margin-top: .35em;
+}
+.wine-list dd {
+  margin: 0; flex-shrink: 0; text-align: right;
+  font-size: .85rem; letter-spacing: .05em;
+  color: var(--gold-lite); line-height: 1.85;
+}
+.wine-note {
+  max-width: 620px; margin: 3.6em auto 0;
+  padding: 1.8em 1.6em; text-align: center;
+  font-size: .84rem; line-height: 2.1; color: var(--text-dim);
+  border: 1px solid var(--line);
+}
+
+/* ============================================================
+   宴会コース
+   ============================================================ */
+.course-card {
+  max-width: 760px; margin: 0 auto;
+  border: 1px solid rgba(191,164,111,.34);
+  padding: 3.2em 3em;
+  text-align: center;
+}
+.course-card__price {
+  font-family: var(--en); font-size: 4.1rem; line-height: 1;
+  color: var(--gold-lite); letter-spacing: .04em; margin: 0 0 .35em;
+}
+.course-card__yen { font-family: var(--serif); font-size: 1.4rem; margin-left: .12em; }
+.course-card__tax {
+  font-family: var(--serif); font-size: .7rem;
+  letter-spacing: .16em; color: var(--text-dim);
+  margin-left: .8em; vertical-align: middle;
+}
+.course-card__spec {
+  font-size: 1.02rem; letter-spacing: .18em; margin: 0 0 1.2em;
+}
+.course-card__free {
+  display: inline-block; margin: 0 0 2.8em;
+  padding: .7em 1.6em; font-size: .8rem; line-height: 1.9;
+  letter-spacing: .08em; color: var(--text-dim);
+  border: 1px solid var(--line);
+}
+
+.course-list {
+  list-style: none; margin: 0; padding: 0; text-align: left;
+  border-top: 1px solid var(--line);
+}
+.course-list li {
+  display: grid;
+  grid-template-columns: 2.6em 8em 1fr;
+  align-items: baseline; gap: .8em;
+  padding: 1.05em .2em;
+  border-bottom: 1px dotted rgba(255,255,255,.11);
+}
+.course-list__no {
+  font-family: var(--en); font-size: 1.1rem;
+  color: var(--gold-dim); letter-spacing: .05em;
+}
+.course-list__name {
+  font-size: 1rem; letter-spacing: .14em; color: var(--gold-lite);
+}
+.course-list__desc {
+  font-size: .82rem; line-height: 1.95; color: var(--text-dim);
+}
+.course-note {
+  margin: 2.4em 0 0; font-size: .76rem; line-height: 2;
+  color: var(--text-dim); text-align: left;
+}
 
 /* ============================================================
    店内のご案内
@@ -531,7 +636,8 @@ p { margin: 0 0 1.6em; }
     line-height: 1.95; letter-spacing: .06em; padding: 0 1.2em;
   }
   .lead p:first-child { font-size: .96rem; letter-spacing: .04em; line-height: 2.1; }
-  .reserve__lead, .sns__lead, .lunch__lead { letter-spacing: .03em; }
+  .reserve__lead, .sns__lead { letter-spacing: .03em; }
+  .hero__renewal { font-size: .66rem; letter-spacing: .38em; margin-bottom: 1.4em; }
 
   .section { padding: 4.8em 1.3em; }
   .section__title { letter-spacing: .2em; margin-bottom: 2em; }
@@ -546,6 +652,28 @@ p { margin: 0 0 1.6em; }
   .taste-item__img::after { inset: 8px; }
 
   .drink-grid { grid-template-columns: 1fr; gap: 0; }
+
+  /* ワインリスト */
+  .wine-grid { grid-template-columns: 1fr; gap: 0; }
+  .wine-grid::before { display: none; }
+  .wine-col + .wine-col { margin-top: 3.4em; }
+  .wine-list > div { flex-direction: column; gap: .35em; }
+  .wine-list dt { font-size: 1.14rem; }
+  .wine-list dd { text-align: left; font-size: .82rem; }
+  .wine-note { padding: 1.4em 1.2em; font-size: .8rem; text-align: justify; }
+
+  /* 宴会コース */
+  .course-card { padding: 2.2em 1.4em; }
+  .course-card__price { font-size: 3rem; }
+  .course-card__spec { font-size: .92rem; letter-spacing: .1em; }
+  .course-card__free { font-size: .74rem; margin-bottom: 2.2em; }
+  .course-list li {
+    grid-template-columns: 2.2em 1fr;
+    row-gap: .2em; padding: 1em .1em;
+  }
+  .course-list__no { grid-row: 1 / 3; }
+  .course-list__desc { text-align: justify; }
+  .course-note { font-size: .72rem; }
 
   .space-grid { grid-template-columns: 1fr; gap: 3em; }
   .space-card img { aspect-ratio: 16 / 10; }
@@ -562,9 +690,6 @@ p { margin: 0 0 1.6em; }
   .info-table td { padding: 0 0 1.1em; }
 
   .map { padding-bottom: 78%; }
-
-  .freedrink > div { flex-direction: column; gap: .25em; }
-  .freedrink dt { width: auto; }
 
   .site-footer { padding: 3.6em 1.3em 8em; }
   .site-footer__nav { gap: .6em 1.2em; font-size: .74rem; }
